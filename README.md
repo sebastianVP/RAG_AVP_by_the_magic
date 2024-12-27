@@ -40,3 +40,4 @@ Imagina que un usuario pregunta: "¿Cuál es la capital de Perú?" y el corpus c
 * Investigación Médica: Consultar artículos científicos y generar respuestas explicativas.
 
 **RAG** es una técnica poderosa que mejora la capacidad de los modelos generativos para trabajar con información actualizada y específica.
+NOTA: Instalar las librerias langchain, langchain-community

@@ -82,10 +82,12 @@ def load_pdf_to_faiss(pdf_path, vector_store=None):
 
     return vector_store
 
-def load_web_to_faiss(url, vector_store=None, max_paragraphs=10):
+def load_web_to_faiss(url, vector_store=None, max_paragraphs=20):
     """
     Extrae el texto principal de una página web, filtra el contenido y lo indexa en FAISS.
     """
+    print("--------------Load WEB to faiss----------")
+
     try:
         response = requests.get(url)
         response.raise_for_status()
@@ -142,7 +144,7 @@ def query_rag_with_web_and_pdf(pdf_path, url, question):
         print("-" * 40)
         print("\n")  # Espacio entre documentos
         # Crear el prompt combinado
-        prompt = f"Contexto:\n{context}\n\nPregunta: {question}\nRespuesta:"
+    prompt = f"Contexto:\n{context}\n\nPregunta: {question}\nRespuesta:"
 
     # Consultar a Ollama
     respuesta = query_ollama(model="llama3", prompt=prompt)
